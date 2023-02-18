@@ -1,14 +1,20 @@
 package fr.b32023.entities;
 
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class PetStore {
+@Entity
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String managerName;
+    private String number;
+    private String street;
+
+    private String zipCode;
+    private String city;
 
 }
