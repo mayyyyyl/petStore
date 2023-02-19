@@ -17,4 +17,10 @@ public abstract class Animal {
 
     public Animal() {
     }
+
+    public Animal(LocalDateTime birth, String couleur, PetStore petStore) {
+        this.birth = birth;
+        this.couleur = couleur;
+        this.petStore = petStore;
+    }
 }

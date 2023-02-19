@@ -29,7 +29,12 @@ public class PetStore {
     private Address address;
 
     public PetStore(){
+    }
 
+    public PetStore(String name, String managerName, Address address) {
+        this.name = name;
+        this.managerName = managerName;
+        this.address = address;
     }
 
     public Long getId() {

@@ -14,10 +14,17 @@ public class Address {
     private String zipCode;
     private String city;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "address")
     private PetStore petStore;
 
     public Address() {
+    }
+
+    public Address(String number, String street, String zipCode, String city) {
+        this.number = number;
+        this.street = street;
+        this.zipCode = zipCode;
+        this.city = city;
     }
 
     public Long getId() {
