@@ -22,6 +22,7 @@
         <class>fr.b32023.entities.Product</class>
         <class>fr.b32023.entities.PetStore</class>
         <class>fr.b32023.entities.Animal</class>
+        <class>fr.b32023.entities.Address</class>
         <class>fr.b32023.entities.Fish</class>
         <class>fr.b32023.entities.Cat</class>
         <properties>

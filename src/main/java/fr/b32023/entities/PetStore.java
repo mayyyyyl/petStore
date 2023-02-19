@@ -12,10 +12,6 @@ public class PetStore {
     private String name;
     private String managerName;
 
-
-    @OneToOne(mappedBy = "petStore", cascade = CascadeType.ALL)
-    private Address address;
-
     @OneToMany(mappedBy = "petStore", cascade = CascadeType.ALL)
     private Set<Animal> animals;
     {
@@ -28,6 +24,9 @@ public class PetStore {
             inverseJoinColumns = @JoinColumn(name = "ID_PRODUCT", referencedColumnName = "ID")
     )
     private Set<Product> products;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
 
     public PetStore(){
 
@@ -53,14 +52,6 @@ public class PetStore {
         this.managerName = managerName;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     public Set<Animal> getAnimals() {
         return animals;
     }
@@ -77,4 +68,11 @@ public class PetStore {
         this.products = products;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }

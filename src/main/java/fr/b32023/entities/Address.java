@@ -14,7 +14,7 @@ public class Address {
     private String zipCode;
     private String city;
 
-    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private PetStore petStore;
 
     public Address() {
