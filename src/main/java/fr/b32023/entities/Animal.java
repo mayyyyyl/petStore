@@ -23,4 +23,16 @@ public abstract class Animal {
         this.couleur = couleur;
         this.petStore = petStore;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public LocalDateTime getBirth() {
+        return birth;
+    }
+
+    public String getCouleur() {
+        return couleur;
+    }
 }

@@ -5,8 +5,10 @@ import fr.b32023.entities.*;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static fr.b32023.entities.FishLivEnv.FRESH_WATER;
@@ -18,6 +20,7 @@ public class Main {
 
         System.out.println("Hello world!");
         createdbPetstore();
+//        selectAnimalFromPetstore();
     }
 
     private static void createdbPetstore() {
@@ -68,7 +71,28 @@ public class Main {
         em.persist(f3);
 
         em.getTransaction().commit();
+
+        TypedQuery<Animal> query = em.createQuery("SELECT a FROM Animal a WHERE a.petStore = '1'", Animal.class);
+        List<Animal> animals = query.getResultList();
+        for (Animal animal : animals) {
+            System.out.println("Animal: " + animal.getId() + " Couleur: " + animal.getCouleur() + " Date de naissance: " + animal.getBirth());
+        }
+
         em.close();
         emf.close();
     }
+
+//    private static void selectAnimalFromPetstore() {
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory( "petstore" );
+//        EntityManager em = emf.createEntityManager();
+//
+//        TypedQuery<Animal> query = em.createQuery("SELECT a FROM Animal a WHERE a.petStore = '1'", Animal.class);
+//        List<Animal> animals = query.getResultList();
+//        for (Animal animal : animals) {
+//            System.out.println("Animal: " + animal.getId() + " Couleur: " + animal.getCouleur() + " Date de naissance: " + animal.getBirth());
+//        }
+//
+//        em.close();
+//        emf.close();
+//    }
 }
