@@ -23,12 +23,11 @@ public class Product {
     public Product() {
     }
 
-    public Product(String code, String label, ProdType type, Double price, Set<PetStore> petsStores) {
+    public Product(String code, String label, ProdType type, Double price) {
         this.code = code;
         this.label = label;
         this.type = type;
         this.price = price;
-        this.petsStores = petsStores;
     }
 
     public Long getId() {
