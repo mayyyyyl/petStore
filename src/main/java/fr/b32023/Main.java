@@ -18,9 +18,8 @@ import static fr.b32023.entities.ProdType.*;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Hello world!");
+        System.out.println("Bonjour !");
         createdbPetstore();
-//        selectAnimalFromPetstore();
     }
 
     private static void createdbPetstore() {
@@ -73,6 +72,7 @@ public class Main {
         em.getTransaction().commit();
 
         TypedQuery<Animal> query = em.createQuery("SELECT a FROM Animal a WHERE a.petStore = '1'", Animal.class);
+        System.out.println("Liste des animaux d'une animalerie:");
         List<Animal> animals = query.getResultList();
         for (Animal animal : animals) {
             System.out.println("Animal: " + animal.getId() + " Couleur: " + animal.getCouleur() + " Date de naissance: " + animal.getBirth());
