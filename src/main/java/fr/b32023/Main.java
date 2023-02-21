@@ -81,18 +81,4 @@ public class Main {
         em.close();
         emf.close();
     }
-
-//    private static void selectAnimalFromPetstore() {
-//        EntityManagerFactory emf = Persistence.createEntityManagerFactory( "petstore" );
-//        EntityManager em = emf.createEntityManager();
-//
-//        TypedQuery<Animal> query = em.createQuery("SELECT a FROM Animal a WHERE a.petStore = '1'", Animal.class);
-//        List<Animal> animals = query.getResultList();
-//        for (Animal animal : animals) {
-//            System.out.println("Animal: " + animal.getId() + " Couleur: " + animal.getCouleur() + " Date de naissance: " + animal.getBirth());
-//        }
-//
-//        em.close();
-//        emf.close();
-//    }
 }

@@ -13,6 +13,7 @@ public class Product {
 
     private String label;
 
+    @Enumerated(EnumType.STRING)
     private ProdType type;
 
     private Double price;

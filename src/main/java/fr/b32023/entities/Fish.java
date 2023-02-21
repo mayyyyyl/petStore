@@ -1,11 +1,14 @@
 package fr.b32023.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDateTime;
 
 @Entity
 public class Fish extends Animal {
 
+    @Enumerated(EnumType.STRING)
     private FishLivEnv livingEnv;
 
     public Fish() {
